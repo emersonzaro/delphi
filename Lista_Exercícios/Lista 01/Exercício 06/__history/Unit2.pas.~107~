@@ -1,0 +1,88 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Button1: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Button2: TButton;
+    Memo1: TMemo;
+    Button3: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    // procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+
+var
+  x, y, recebe: Real;
+
+begin
+  x := 0;
+  y := 0;
+
+  x := StrToFloat(Edit1.Text);
+  y := StrToFloat(Edit2.Text);
+
+//  memo1.Lines.Add('Valor lido de x foi: ' + FloatToStr(x) );
+//  memo1.Lines.Add('Valor lido de y foi: ' + FloatToStr(y) );
+
+  ShowMessage('O valor atual de X é:  ' +FloatToStr(x));
+  ShowMessage('O valor atual de Y é:  ' +FloatToStr(y));
+
+  begin
+//    memo1.Lines.Add('vou comparar se x eh diferente de y' );
+    if (x <> y) then
+    begin
+//      memo1.Lines.Add('verdade, x eh diferente ');
+      recebe := x;
+      x := y;
+      y := recebe;
+
+       ShowMessage('O novo valor de X é:  ' +FloatToStr(x));
+       ShowMessage('O novo valor de Y é:  ' +FloatToStr(y));
+
+    end;
+
+  end;
+
+end;
+
+procedure TForm2.Button2Click(Sender: TObject);
+begin
+  Showmessage('OK');
+end;
+
+procedure TForm2.Button3Click(Sender: TObject);
+var
+  I: Integer;
+begin
+   for I := 1 to 5 do
+     Showmessage('Sim');
+end;
+
+end.
+
+

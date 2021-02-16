@@ -1,0 +1,63 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    edVeloInicial: TEdit;
+    edAcel: TEdit;
+    edTempo: TEdit;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+
+var
+V, v0, a, t: Real;
+
+begin
+v0:=StrToFloat(edVeloInicial.Text);
+a:=StrToFloat(edAcel.Text);
+t:=StrToFloat(edTempo.Text);
+V:=v0+(a*t)*3.6;
+
+  if (V<=40) then
+    ShowMessage('Veículo Muito Lento')
+  else
+
+  if (V>40) and (V<=60) then
+    ShowMessage('Velocidade Permitida')
+  else
+
+  if (V>60) and (V<=80)then
+    ShowMessage('Velocidade de Cruzeiro')
+  else
+
+  if (V>80) and (V<=120) then
+     ShowMessage('Veículo Rápido')
+  else
+
+  if (V>120) then
+     ShowMessage('Veículo Muito Rápido')
+end;
+
+end.

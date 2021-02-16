@@ -1,0 +1,59 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    edConverte: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    btConverte: TButton;
+    procedure btConverteClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.btConverteClick(Sender: TObject);
+
+var
+//I, V, X, L, C, D, M,
+conv: Integer;
+
+begin
+conv:=StrToInt(edConverte.Text);
+  if (conv = 1) then
+    edConverte.Text:='I'
+  else
+  if (conv = 5) then
+    edConverte.Text:='V'
+  else
+  if (conv = 10) then
+    edConverte.Text:='X'
+  else
+  if (conv = 50) then
+    edConverte.Text:='L'
+  else
+  if (conv = 100) then
+    edConverte.Text:='C'
+  else
+  if (conv = 500) then
+    edConverte.Text:='D'
+  else
+  if (conv = 1000) then
+    edConverte.Text:='M'
+ end;
+
+end.

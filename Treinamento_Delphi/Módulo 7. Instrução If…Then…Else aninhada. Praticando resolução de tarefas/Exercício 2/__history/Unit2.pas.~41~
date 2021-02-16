@@ -1,0 +1,48 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Label1: TLabel;
+    Edit1: TEdit;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+  a : Real;
+  b, c, d: Integer;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+  a:=StrToFloat(Edit1.Text);
+  b:=(a mod 4);
+  c:=(a mod 100);
+  d:=(a mod 400);
+  ShowMessage(''+FloatToStr(b));
+  ShowMessage(''+FloatToStr(c));
+  ShowMessage(''+FloatToStr(d));
+
+//  if (b=0) and (c<>0) and (d=0) then
+//    ShowMessage('Ano é Bissexto')
+//  else
+//    ShowMessage('Ano não é Bissexto');
+
+
+end;
+
+end.

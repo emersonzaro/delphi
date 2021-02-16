@@ -1,0 +1,51 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Converter Num Romanos'
+  ClientHeight = 145
+  ClientWidth = 445
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 56
+    Top = 24
+    Width = 340
+    Height = 13
+    Caption = 
+      'Digite algum dos n'#250'meros abaixo para transform'#225'-los em n'#186' romano' +
+      's:  '
+  end
+  object Label2: TLabel
+    Left = 144
+    Top = 43
+    Width = 149
+    Height = 13
+    Caption = '1, 5, 10, 50, 100, 500 ou 1000'
+  end
+  object edConverte: TEdit
+    Left = 192
+    Top = 72
+    Width = 41
+    Height = 21
+    Color = clInfoBk
+    NumbersOnly = True
+    TabOrder = 0
+    Text = '00'
+  end
+  object btConverte: TButton
+    Left = 176
+    Top = 99
+    Width = 75
+    Height = 25
+    Caption = 'Converte'
+    TabOrder = 1
+    OnClick = btConverteClick
+  end
+end

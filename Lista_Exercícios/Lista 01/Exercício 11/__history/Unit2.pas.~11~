@@ -1,0 +1,91 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Label1: TLabel;
+    edCod01: TEdit;
+    edCod02: TEdit;
+    edCod03: TEdit;
+    Label2: TLabel;
+    edCompra01: TEdit;
+    edCompra02: TEdit;
+    edCompra03: TEdit;
+    btCalular: TButton;
+    Button1: TButton;
+    bt100: TButton;
+    procedure btCalularClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure bt100Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+
+  var
+
+  cliente1, cliente2, cliente3, i : Integer;
+  compra1, compra2, compra3, total, media: Real;
+
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.bt100Click(Sender: TObject);
+
+begin
+  i:=0;
+  cliente1:=StrToInt(edCod01.Text);
+  cliente2:=StrToInt(edCod02.Text);
+  cliente3:=StrToInt(edCod03.Text);
+  compra1:=StrToFloat(edCompra01.Text);
+  compra2:=StrToFloat(edCompra02.Text);
+  compra3:=StrToFloat(edCompra03.Text);
+
+   if (compra1 > 100) then
+     i:=1;
+   if (compra2 > 100) then
+     i:=i+1;
+   if (compra3 > 100) then
+     i:=i+1;
+
+   if i = 1 then
+     ShowMessage('Um cliente comprou abaixo de 50 reais')
+    else
+   if i = 2 then
+      ShowMessage('Dois clientes compraram abaixo de 50 reais')
+      else
+   if i = 3 then
+      ShowMessage('Três clientes compraram abaixo de 50 reais')
+
+end;
+
+procedure TForm2.btCalularClick(Sender: TObject);
+begin
+  compra1:=StrToFloat(edCompra01.Text);
+  compra2:=StrToFloat(edCompra02.Text);
+  compra3:=StrToFloat(edCompra03.Text);
+  total:=(compra1+compra2+compra3);
+  ShowMessage('O valor total das compras é: '+ FloatToStr(total));
+end;
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+  compra1:=StrToFloat(edCompra01.Text);
+  compra2:=StrToFloat(edCompra02.Text);
+  compra3:=StrToFloat(edCompra03.Text);
+  media:=(compra1+compra2+compra3)/3;
+    ShowMessage('O valor médio da compra é: '+ FloatToStr(compra2));
+end;
+
+end.

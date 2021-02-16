@@ -1,0 +1,56 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Label1: TLabel;
+    edSalario: TEdit;
+    Label2: TLabel;
+    edTotalVendas: TEdit;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+
+var
+salario, totalvendas, premio500, premio700, premio1000, total: Real;
+
+begin
+  salario:=StrToFloat(edSalario.Text);
+  totalvendas:=StrToFloat(edTotalVendas.Text);
+  premio500:=500;
+  premio700:=700;
+  premio1000:=1000;
+  total:=(salario+totalvendas);
+
+  if (total > 1000) and (total <= 5000) then
+    total:=(total+premio500);
+    ShowMessage('Salário total:' + FloatToStr(total))
+  else
+  if (total > 5000) and (total <= 7500) then
+    total:=(total+premio700);
+     ShowMessage('Salário total:' + FloatToStr(total))
+  else
+  if (total >7500) then
+  total:=(total+premio1000);
+    ShowMessage('Salário total:' + FloatToStr(total));
+end;
+
+end.

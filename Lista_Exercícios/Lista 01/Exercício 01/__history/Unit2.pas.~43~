@@ -1,0 +1,61 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    lbMaximo: TLabel;
+    edValor1: TEdit;
+    edValor2: TEdit;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+
+var
+  a, b: Real;
+
+begin
+  a := StrToFloat(edValor1.Text);
+  b := StrToFloat(edValor2.Text);
+
+
+  if (a > b) then
+    lbMaximo.Caption := FloatToStr(a)
+  else
+    lbMaximo.Caption := FloatToStr(b);
+
+  if (a = b) then
+  begin
+    Label3.Caption := '';
+    lbMaximo.Caption := '';
+    ShowMessage('Não existe maior valor pois todos os valores são iguais!');
+  end;
+
+  edValor1.Text := '';
+  edValor2.Text := '';
+  edValor1.Text := '0';
+
+end;
+
+end.

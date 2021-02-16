@@ -1,0 +1,114 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Label1: TLabel;
+    Edit1: TEdit;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+
+var
+  salario, baseirrf, deducao, inss8, inss9, inss11: Real;
+
+begin
+
+  salario := StrToFloat(Edit1.Text);
+
+  if (salario <= 1830.30) then
+  begin
+    inss8 := (salario * 0.09);
+    ShowMessage('INSS' + FloatToStr(inss9));
+    ShowMessage('SEM Irrf');
+  end;
+
+  if (salario >= 1830.30) and (salario < 3050.52) then
+  begin
+    inss9 := (salario * 0.09);
+    ShowMessage('INSS' + FloatToStr(inss9));
+    baseirrf := (salario - inss9);
+    if (baseirrf >= 1903.99) and (baseirrf <= 2826.65) then
+      deducao := ((baseirrf * 0.075) - 142.80);
+    ShowMessage('O valor do irrf é: ' + FloatToStr(deducao));
+  end;
+
+  if (salario > 3050.53) and (salario <= 6101.06) then
+  begin
+    inss11 := (salario * 0.11);
+    ShowMessage('INSS' + FloatToStr(inss11));
+    baseirrf := (salario - inss11);
+
+    if (baseirrf >= 2826.66) and (baseirrf <= 3751.05) then
+    begin
+       deducao := ((baseirrf * 0.15) - 354.80);
+    ShowMessage('O valor do irrf é: ' + FloatToStr(deducao));
+    end;
+
+    if (baseirrf >= 3751.06) and (baseirrf <= 4664.68) then
+    begin
+          deducao := ((baseirrf * 0.225) - 636.13);
+    ShowMessage('O valor do irrf é: ' + FloatToStr(deducao));
+    end;
+ 
+
+    if (baseirrf > 4664.68) then
+    begin
+       deducao := ((baseirrf * 0.275) - 869.36);
+    ShowMessage('O valor do irrf é: ' + FloatToStr(deducao));
+    end;
+    
+
+  end;
+
+end;
+
+// else
+//
+// if (salario > 1830.29) and (salario <= 3050.52) then
+// begin
+// inss9 := (salario * 0.09);
+// ShowMessage('INSS' +FloatToStr(inss9));
+//
+// end;
+// if (salario > 1903.98) and (salario <= 2826.65) then
+// begin
+// deducao := (salario - inss9)*0.075;
+// deducao := (142.80 - deducao);
+// ShowMessage('O valor do seu Irrf é: ' + FloatToStr(deducao));
+// end
+// else
+//
+// if (salario > 3050.52) and (salario <= 6101.06) then
+// begin
+// inss11 := (salario * 0.11);
+// ShowMessage('INSS' +FloatToStr(inss11));
+//
+// end;
+// if (salario > 2826.67) and (salario <= 3751.05) then
+// begin
+// deducao := (salario - inss11)*0.15;
+// deducao := (354.80 - deducao);
+// ShowMessage('O valor do seu Irrf é: ' + FloatToStr(deducao));
+// end;
+// end;
+end.

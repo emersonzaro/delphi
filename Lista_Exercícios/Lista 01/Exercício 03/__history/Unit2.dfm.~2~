@@ -1,0 +1,69 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Peso Ideal'
+  ClientHeight = 201
+  ClientWidth = 445
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 24
+    Top = 80
+    Width = 27
+    Height = 13
+    Caption = 'Peso:'
+  end
+  object Label2: TLabel
+    Left = 24
+    Top = 128
+    Width = 33
+    Height = 13
+    Caption = 'Altura:'
+  end
+  object Label3: TLabel
+    Left = 24
+    Top = 32
+    Width = 28
+    Height = 13
+    Caption = 'Sexo:'
+  end
+  object rbFeminino: TRadioButton
+    Left = 64
+    Top = 16
+    Width = 113
+    Height = 17
+    Caption = 'Feminino'
+    TabOrder = 0
+  end
+  object rbMasculino: TRadioButton
+    Left = 64
+    Top = 39
+    Width = 113
+    Height = 17
+    Caption = 'Masculino'
+    TabOrder = 1
+  end
+  object Edit1: TEdit
+    Left = 64
+    Top = 77
+    Width = 56
+    Height = 21
+    TabOrder = 2
+    Text = 'Edit1'
+  end
+  object Edit2: TEdit
+    Left = 63
+    Top = 125
+    Width = 57
+    Height = 21
+    TabOrder = 3
+    Text = 'Edit2'
+  end
+end

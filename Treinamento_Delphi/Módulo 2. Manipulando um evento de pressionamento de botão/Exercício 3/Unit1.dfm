@@ -1,0 +1,66 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Exerc'#237'cio # 3'
+  ClientHeight = 168
+  ClientWidth = 441
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnActivate = FormActivate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lbLeft: TLabel
+    Left = 80
+    Top = 32
+    Width = 54
+    Height = 13
+    Caption = 'ESQUERDA'
+  end
+  object lbCenter: TLabel
+    Left = 200
+    Top = 32
+    Width = 41
+    Height = 13
+    Caption = 'CENTRO'
+  end
+  object lbRight: TLabel
+    Left = 312
+    Top = 32
+    Width = 37
+    Height = 13
+    Caption = 'DIRETA'
+  end
+  object btLeft: TButton
+    Left = 64
+    Top = 104
+    Width = 75
+    Height = 25
+    Caption = '<<'
+    TabOrder = 0
+    OnClick = btLeftClick
+  end
+  object btCenter: TButton
+    Left = 184
+    Top = 104
+    Width = 75
+    Height = 25
+    Caption = '^'
+    TabOrder = 1
+    OnClick = btCenterClick
+  end
+  object btRight: TButton
+    Left = 296
+    Top = 104
+    Width = 75
+    Height = 25
+    Caption = '>>'
+    TabOrder = 2
+    OnClick = btRightClick
+  end
+end

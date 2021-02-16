@@ -1,0 +1,87 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Clientes'
+  ClientHeight = 201
+  ClientWidth = 445
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 24
+    Top = 16
+    Width = 139
+    Height = 13
+    Caption = 'Inclua o c'#243'digo de 3 clientes:'
+  end
+  object Label2: TLabel
+    Left = 24
+    Top = 80
+    Width = 148
+    Height = 13
+    Caption = 'Inclua o valor de cada compra:'
+  end
+  object edCod01: TEdit
+    Left = 24
+    Top = 35
+    Width = 41
+    Height = 21
+    TabOrder = 0
+    Text = '0'
+  end
+  object edCod02: TEdit
+    Left = 71
+    Top = 35
+    Width = 41
+    Height = 21
+    TabOrder = 1
+    Text = '0'
+  end
+  object edCod03: TEdit
+    Left = 118
+    Top = 35
+    Width = 45
+    Height = 21
+    TabOrder = 2
+    Text = '0'
+  end
+  object edCompra01: TEdit
+    Left = 24
+    Top = 99
+    Width = 65
+    Height = 21
+    TabOrder = 3
+    Text = '0'
+  end
+  object edCompra02: TEdit
+    Left = 107
+    Top = 99
+    Width = 65
+    Height = 21
+    TabOrder = 4
+    Text = '0'
+  end
+  object edCompra03: TEdit
+    Left = 189
+    Top = 99
+    Width = 75
+    Height = 21
+    TabOrder = 5
+    Text = '0'
+  end
+  object btCalular: TButton
+    Left = 24
+    Top = 144
+    Width = 105
+    Height = 25
+    Caption = 'Total de Compras'
+    TabOrder = 6
+    OnClick = btCalularClick
+  end
+end
